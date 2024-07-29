@@ -1,0 +1,41 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ppomodoro timer</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>PPOMODORO TIMER</h1>
+            <div>뽀모도로 타이머는 머시깽 머시깽한 타이머입니다.</div>
+            <div>뽀모도로를 통해 더욱 효율적으로 공부나 작업에 집중해보세요.</div>
+        </div>
+
+        <div id="body">
+            <div class="ppomodoroContainer">
+                <div id="ppomodoroTimer"></div>
+                <button id="startPpomodoroButton">시작하기</button>
+                <button id="resetPpomodoroButton">초기화하기</button>
+            </div>
+            <div class="restContainer">
+                <div id="restTimer"></div>
+                <button id="startRestButton">시작하기</button>
+            </div>
+            <div class="saveContainer">
+                <input type="text" name="title" id="title" placeholder="오늘의 뽀모도로 내용을 입력하세요" />
+                <button id="saveButton">시간 저장하기</button>
+                <button id="moveButton">저장된 시간 보러 가기</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        $("#moveButton").click(function () {
+            window.location.href = "./list.html";
+        });
+    </script>
+</html>
