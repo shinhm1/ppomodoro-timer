@@ -6,30 +6,57 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ppomodoro timer</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900"
+            rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="./index.js"></script>
+        <script src="./js/index.js"></script>
     </head>
     <body>
-        <div id="header">
-            <h1>PPOMODORO TIMER</h1>
-            <div>뽀모도로 타이머는 머시깽 머시깽한 타이머입니다.</div>
-            <div>뽀모도로를 통해 더욱 효율적으로 공부나 작업에 집중해보세요.</div>
-        </div>
+        <div id="wrapper">
+            <div id="header">
+                <h1>PPOMODORO TIMER</h1>
+                <div class="subtile">뽀모도로 타이머는 집중력 향상을 돕는 시간 관리 타이머입니다.</div>
+                <div class="subtile">뽀모도로를 통해 더욱 효율적으로 공부나 작업에 집중해보세요.</div>
+            </div>
 
-        <div id="body">
-            <div class="ppomodoroContainer">
-                <div id="ppomodoroTimer"></div>
-                <button id="startPpomodoroButton">시작하기</button>
-                <button id="resetPpomodoroButton">초기화하기</button>
-            </div>
-            <div class="restContainer">
-                <div id="restTimer"></div>
-                <button id="startRestButton">시작하기</button>
-            </div>
-            <div class="saveContainer">
-                <input type="text" name="title" id="title" placeholder="오늘의 뽀모도로 내용을 입력하세요" />
-                <button id="saveButton">시간 저장하기</button>
-                <button id="moveButton">저장된 시간 보러 가기</button>
+            <div id="body">
+                <div class="timerContainer">
+                    <div class="ppomodoroContainer">
+                        <div class="timerTitle" id="ppomodoroTitle">PPOMODORO</div>
+                        <div id="ppomodoroTimer"></div>
+                        <div class="buttonContainer">
+                            <button id="startPpomodoroButton">
+                                <img src="./icon/play-icon.svg" id="startPpomSvg" class="ppomodoroSvg" />
+                            </button>
+                            <button id="resetPpomodoroButton">
+                                <img src="./icon/stop-icon.svg" id="resetPpomSvg" class="ppomodoroSvg" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="restContainer">
+                        <div class="timerTitle" id="restTitle">REST</div>
+                        <div id="restTimer"></div>
+                        <button id="startRestButton">
+                            <img src="./icon/play-icon.svg" id="startRestSvg" class="restSvg" />
+                        </button>
+                    </div>
+                </div>
+                <!-- <hr /> -->
+                <div class="saveContainer">
+                    <input
+                        type="text"
+                        name="inputTitle"
+                        id="inputTitle"
+                        placeholder="오늘의 뽀모도로 내용을 입력하세요" />
+                    <div class="buttonConatiner">
+                        <button id="saveButton" class="textButton">시간 저장하기</button>
+                        <button id="moveButton" class="textButton">저장된 시간 보러 가기</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

@@ -4,7 +4,8 @@ import {exportSavedTime, exportSavedTime as ppomodoroTimer} from "./ppomodoroTim
 
 $("#saveButton").click(function () {
     var time = exportSavedTime();
-    var title = $("#title").val();
+    var title = $("#inputTitle").val();
+    console.log(title);
     var savedDate = new Date().toISOString();
 
     // AJAX 요청을 통해 서버에 데이터를 저장

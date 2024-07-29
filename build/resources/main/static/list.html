@@ -6,22 +6,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Saved Ppomodoro Time</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900"
+            rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="./list.js"></script>
+        <script src="./js/list.js"></script>
     </head>
     <body>
-        <div id="header">
-            <h1>PPOMODORO TIMER</h1>
-            <div>저장된 뽀모도로 시간을 확인할 수 있어요.</div>
-        </div>
-        <div id="body">
-            <table id="timerTable">
-                <tr>
-                    <th>시간</th>
-                    <th>내용</th>
-                    <th>저장 일자</th>
-                </tr>
-            </table>
+        <div id="wrapper">
+            <div id="header">
+                <h1>PPOMODORO TIMER</h1>
+                <div class="subtile">저장된 뽀모도로 시간을 확인할 수 있어요.</div>
+            </div>
+            <div id="body">
+                <table id="timerTable">
+                    <tr>
+                        <th>시간</th>
+                        <th>내용</th>
+                        <th>저장 일자</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </body>
 </html>
