@@ -1,0 +1,156 @@
+/** @format */
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Pretendard";
+}
+
+button {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+table {
+    min-width: 500px;
+}
+td {
+    text-align: center;
+}
+
+#wrapper {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+#header {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+#header h1 {
+    font-family: "Syne", sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+#header .subtile {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 8px;
+}
+
+#body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#body .timerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+}
+
+#body .ppomodoroContainer,
+.restContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#body .timerTitle {
+    margin-bottom: 4px;
+    font-family: "Syne", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#body #ppomodoroTitle {
+    color: rgb(247, 49, 49);
+}
+
+#body #restTitle {
+    color: rgb(28, 229, 102);
+}
+
+#body #ppomodoroTimer,
+#restTimer {
+    width: 200px;
+    height: 180px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 48px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.ppomodoroSvg {
+    filter: invert(53%) sepia(80%) saturate(5455%) hue-rotate(339deg) brightness(94%) contrast(106%);
+}
+
+.restSvg {
+    filter: invert(100%) sepia(50%) saturate(600%) hue-rotate(80deg) brightness(120%) contrast(75%);
+}
+
+#ppomodoroTimer {
+    background-color: rgb(247, 49, 49);
+}
+
+#restTimer {
+    background-color: rgb(28, 229, 102);
+}
+
+.saveContainer {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#inputTitle {
+    margin-bottom: 24px;
+    width: 400px;
+    height: 48px;
+    border-radius: 16px;
+    border: 0;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.textButton {
+    width: 200px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.isNotRunning {
+    filter: opacity(0.5);
+}
