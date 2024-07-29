@@ -3,7 +3,7 @@ import {autoStartRestTimer as restTimer} from "./restTimer.js";
 
 let ppomodoroTimer = $("#ppomodoroTimer");
 let isTimerRunning = false;
-let ppomodoroTime = 5;
+let ppomodoroTime = 50 * 60;
 let savedTime = 0;
 let second = ppomodoroTime;
 let interval;
@@ -17,8 +17,6 @@ ppomodoroTimer.val("stop");
 
 export function resetPpomodoroTimer() {
     resetTimer();
-    $("#startPpomodoroButton").prop("disabled", false);
-    $("#resetPpomodoroButton").prop("disabled", false);
 }
 
 $("#startPpomodoroButton").click(function () {
@@ -33,11 +31,11 @@ $("#resetPpomodoroButton").click(function () {
 function startAndStop() {
     if (!isTimerRunning && second > 0) {
         isTimerRunning = true;
-        $("#startPpomodoroButton").text("중지하기");
+        $("#startPpomSvg").prop("src", "./pause-icon.svg");
         startTimer();
     } else {
+        $("#startPpomSvg").prop("src", "./play-icon.svg");
         isTimerRunning = false;
-        $("#startPpomodoroButton").text("시작하기");
         stopTimer();
     }
 }
@@ -46,6 +44,7 @@ function startAndStop() {
 function resetTimer() {
     stopTimer();
     second = ppomodoroTime;
+    $("#startPpomSvg").prop("src", "./play-icon.svg");
     $(ppomodoroTimer.text(secToTimer(second)));
 }
 
@@ -57,8 +56,11 @@ function startTimer() {
         ppomodoroTimer.text(secToTimer(second));
         if (second <= 0) {
             clearInterval(interval);
-            $("#startPpomodoroButton").text("시작하기").prop("disabled", true);
-            $("#resetPpomodoroButton").prop("disabled", true);
+            $("#startPpomSvg").prop("src", "./play-icon.svg");
+            // $("#ppomodoroContainer").addClass("isNotRunning");
+            console.log(2);
+            // $("#restContainer").removeClass("isNotRunning");
+            console.log(3);
             restTimer();
         }
     }, 1000);
@@ -68,7 +70,6 @@ function startTimer() {
 function stopTimer() {
     interval = clearInterval(interval);
     isTimerRunning = false;
-    $("#startPpomodoroButton").text("시작하기");
 }
 
 // second를 mm:ss 형태로 변환

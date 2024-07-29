@@ -3,7 +3,7 @@ import {resetPpomodoroTimer as ppomodoroTimer} from "./ppomodoroTimer.js";
 
 let restTimer = $("#restTimer");
 let isTimerRunning = false;
-let restTime = 5;
+let restTime = 10 * 60;
 let second = restTime;
 let interval;
 
@@ -12,7 +12,6 @@ export function autoStartRestTimer() {
 }
 
 restTimer.text(secToTimer(second));
-restTimer.val("stop");
 $("#startRestButton").prop("disabled", true);
 
 $("#startRestButton").click(function () {
@@ -22,13 +21,12 @@ $("#startRestButton").click(function () {
 // 타이머 시작 및 일시정지
 function startAndStop() {
     if (!isTimerRunning && second > 0) {
+        $("#starRestSvg").prop("src", "./icon/pause-icon.svg");
         isTimerRunning = true;
-        $("#startRestButton").prop("disabled", false);
-        $("#startRestButton").text("중지하기");
         startTimer();
     } else {
         isTimerRunning = false;
-        $("#startRestButton").text("시작하기");
+        $("#startRestSvg").prop("src", "./icon/play-icon.svg");
         stopTimer();
     }
 }
@@ -40,7 +38,7 @@ function startTimer() {
         restTimer.text(secToTimer(second));
         if (second <= 0) {
             clearInterval(interval);
-            $("#startRestButton").text("시작하기").prop("disabled", true);
+            $("#startRestSvg").prop("src", "./icon/play-icon.svg");
             resetTimer();
             ppomodoroTimer();
         }
@@ -56,6 +54,8 @@ function resetTimer() {
     isTimerRunning = false;
     second = restTime;
     restTimer.text(secToTimer(second));
+    // $("#restTimer").addClass("isNotRunning");
+    // $("#ppomodoroTimer").removeClass("isNotRunning");
 }
 
 // second를 mm:ss 형태로 변환
